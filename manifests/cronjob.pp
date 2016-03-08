@@ -1,6 +1,6 @@
 #
 define purgefiles::cronjob(
-                            $path,
+                            $path=$name,
                             $mtime,
                             $action="-delete",
                             $type="-type f",
