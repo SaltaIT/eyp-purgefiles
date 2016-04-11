@@ -13,6 +13,7 @@ define purgefiles::cronjob(
                           ) {
 
   cron { "cronjob purgefiles ${name}":
+    ensure   => $ensure,
     command  => "find ${path} ${type} -mtime ${mtime} ${action}",
     user     => 'root',
     hour     => $hour,
@@ -20,7 +21,6 @@ define purgefiles::cronjob(
     month    => $month,
     monthday => $monthday,
     weekday  => $weekday,
-    ensure   => $ensure,
   }
 
 }
