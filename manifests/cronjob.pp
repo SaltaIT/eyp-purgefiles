@@ -1,16 +1,16 @@
 #
 define purgefiles::cronjob(
-                            $path     = $name,
-                            $action   = "-delete",
-                            $mtime    = undef,
-                            $type     = "f",
-                            $hour     = '0',
-                            $minute   = '0',
-                            $month    = undef,
-                            $monthday = undef,
-                            $weekday  = undef,
-                            $ensure   = 'present',
-                            $file_iname     = undef,
+                            $path       = $name,
+                            $action     = "-delete",
+                            $mtime      = undef,
+                            $type       = "f",
+                            $hour       = '0',
+                            $minute     = '0',
+                            $month      = undef,
+                            $monthday   = undef,
+                            $weekday    = undef,
+                            $ensure     = 'present',
+                            $file_iname = undef,
                           ) {
 
   #"find ${path} ${type} -mtime ${mtime} ${action}"
