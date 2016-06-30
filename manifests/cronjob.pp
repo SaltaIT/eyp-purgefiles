@@ -1,15 +1,15 @@
 #
 define purgefiles::cronjob(
-                            $path=$name,
                             $mtime,
-                            $action="-delete",
-                            $type="-type f",
-                            $hour='0',
-                            $minute='0',
-                            $month=undef,
-                            $monthday=undef,
-                            $weekday=undef,
-                            $ensure='present',
+                            $path     = $name,
+                            $action   = "-delete",
+                            $type     = "-type f",
+                            $hour     = '0',
+                            $minute   = '0',
+                            $month    = undef,
+                            $monthday = undef,
+                            $weekday  = undef,
+                            $ensure   = 'present',
                           ) {
 
   cron { "cronjob purgefiles ${name}":
