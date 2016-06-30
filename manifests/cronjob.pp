@@ -1,20 +1,22 @@
 #
 define purgefiles::cronjob(
-                            $mtime,
                             $path     = $name,
                             $action   = "-delete",
-                            $type     = "-type f",
+                            $mtime    = undef,
+                            $type     = "f",
                             $hour     = '0',
                             $minute   = '0',
                             $month    = undef,
                             $monthday = undef,
                             $weekday  = undef,
                             $ensure   = 'present',
+                            $file_iname     = undef,
                           ) {
 
-  cron { "cronjob purgefiles ${name}":
+  #"find ${path} ${type} -mtime ${mtime} ${action}"
+  cron { "cronjob purgefiles ${name} ${path} ${mtime} ${type} ${hour} ${minute} ${month} ${monthday} ${weekday} ${ensure} ${file_iname}":
     ensure   => $ensure,
-    command  => "find ${path} ${type} -mtime ${mtime} ${action}",
+    command  => inline_template('find <%= @path %> <% if defined?(@file_iname) %>-iname <%= @file_iname %><% end %> <% if defined?(@type) %>-type <%= @type %><% end %> <% if defined?(@mtime) %>-mtime <%= @mtime %><% end %> <%= @action %>'),
     user     => 'root',
     hour     => $hour,
     minute   => $minute,

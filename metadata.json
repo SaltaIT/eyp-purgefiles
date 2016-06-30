@@ -1,6 +1,6 @@
 {
   "name": "eyp-purgefiles",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": "eyp",
   "summary": "purges files using: find {path} {type} -mtime {mtime} {action}",
   "license": "Apache-2.0",
