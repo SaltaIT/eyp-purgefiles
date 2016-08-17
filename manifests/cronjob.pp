@@ -14,7 +14,7 @@ define purgefiles::cronjob(
                             $cronjobname = undef,
                           ) {
 
-  if($cronjobname==undef)
+  if($cronjobname!=undef)
   {
     $cron_job_name=$cronjobname
   }
