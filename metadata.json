@@ -2,7 +2,7 @@
   "name": "eyp-purgefiles",
   "version": "0.1.5",
   "author": "eyp",
-  "summary": "purges files using: find {path} {type} -mtime {mtime} {action}",
+  "summary": "purges files using find",
   "license": "Apache-2.0",
   "source": "",
   "project_page": null,
