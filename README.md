@@ -45,11 +45,19 @@ etc.), mention it here.
 
 ### Beginning with purgefiles
 
-The very basic steps needed for a user to get the module up and running.
+```hiera
+purgefiles:
+  '/opt/bobj/xi31/bobje/logging':
+    mtime: '+29'
+```
 
-If your most recent release breaks compatibility or requires particular steps
-for upgrading, you may wish to include an additional section here: Upgrading
-(For an example, see http://forge.puppetlabs.com/puppetlabs/firewall).
+```puppet
+class { 'purgefiles': }
+
+purgefiles::cronjob { '/lol':
+  file_iname => '*gz',
+}
+```
 
 ## Usage
 
