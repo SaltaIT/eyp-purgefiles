@@ -1,0 +1,7 @@
+find <%= @path -%> 
+    <% if @xdev %>-xdev <% end -%>
+    <% if defined?(@maxdepth) %>-maxdepth <%= @maxdepth %><% end -%>
+    <% if defined?(@file_iname) %>-iname <%= @file_iname %><% end -%>
+    <% if defined?(@type) %>-type <%= @type %><% end -%>
+    <% if defined?(@mtime) %>-mtime <%= @mtime %><% end -%>
+    <% if @compress %>-exec gzip {} \;<% else %><%= @action %><% end -%>
