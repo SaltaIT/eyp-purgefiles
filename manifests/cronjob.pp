@@ -25,12 +25,6 @@ define purgefiles::cronjob(
     $cron_job_name="purgefiles ${name} ${path} ${mtime} ${type} ${hour} ${minute} ${month} ${monthday} ${weekday} ${ensure} ${file_iname}"
   }
 
-  file { '/root/demo':
-    ensure => 'present',
-    owner => 'root',
-    content => template("${module_name}/purge.erb"),
-  }
-
   cron { $cron_job_name:
     ensure   => $ensure,
     command  => template("${module_name}/purge.erb"),
