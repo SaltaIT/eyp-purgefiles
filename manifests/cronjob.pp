@@ -1,9 +1,8 @@
-#
 define purgefiles::cronjob(
                             $path        = $name,
-                            $action      = "-delete",
+                            $action      = '-delete',
                             $mtime       = undef,
-                            $type        = "f",
+                            $type        = 'f',
                             $hour        = '0',
                             $minute      = '0',
                             $month       = undef,
@@ -23,10 +22,9 @@ define purgefiles::cronjob(
   }
   else
   {
-    $cron_job_name="cronjob purgefiles ${name} ${path} ${mtime} ${type} ${hour} ${minute} ${month} ${monthday} ${weekday} ${ensure} ${file_iname}"
+    $cron_job_name="purgefiles ${name} ${path} ${mtime} ${type} ${hour} ${minute} ${month} ${monthday} ${weekday} ${ensure} ${file_iname}"
   }
 
-  #"find ${path} ${type} -mtime ${mtime} ${action}"
   cron { $cron_job_name:
     ensure   => $ensure,
     command  => template("${module_name}/purge.erb"),
