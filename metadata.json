@@ -1,15 +1,15 @@
 {
   "name": "eyp-purgefiles",
-  "version": "0.1.7",
-  "author": "eyp",
+  "version": "1.0.7",
+  "author": "Jordi Prats",
   "summary": "purges files using find",
   "license": "Apache-2.0",
-  "source": "https://github.com/NTTCom-MS/eyp-purgefiles",
-  "project_page": "https://github.com/NTTCom-MS/eyp-purgefiles",
-  "issues_url": "https://github.com/NTTCom-MS/eyp-purgefiles/issues",
+  "source": "https://github.com/SaltaIT/eyp-purgefiles",
+  "project_page": "https://github.com/SaltaIT/eyp-purgefiles",
+  "issues_url": "https://github.com/SaltaIT/eyp-purgefiles/issues",
   "dependencies": [
     {"name":"puppetlabs/stdlib","version_requirement":">= 4.12.0 < 9.9.9"},
-    {"name":"eyp/eyplib","version_requirement":">= 0.1.0 < 0.2.0"}
+    {"name":"eyp/eyplib","version_requirement":">= 1.0.0 < 2.0.0"}
   ],
   "requirements": [
     {
